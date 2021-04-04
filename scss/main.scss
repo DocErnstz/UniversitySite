@@ -1,0 +1,457 @@
+$light: #f7f7f7;
+$dark: #222121;
+$lime: #00cc66;
+$orangeRed: #fb4b4e;
+$blue: #2541b2;
+$primary-color: #2541b2;
+$whiteColor: #f4f4f4;
+$mainRed: #660000;
+$darkGrey: #333;
+$landingImage: url('../img/landing.jpg');
+$tourHomeImage: url('../img/tourHome.jpg');
+$testimonialHome: url('../img/testimonialHome.jpg');
+$aboutLanding: url('../img/aboutLanding.jpg');
+$programsLanding: url('../img/programsLanding.jpg');
+$costLanding: url('../img/costLanding.jpg');
+$enrollLanding: url('../img/enrollLanding.jpg');
+$tourLanding: url('../img/tourLanding.jpg');
+
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+  }
+
+  @mixin media-md {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @mixin media-lg {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+  @mixin media-xl {
+    @media screen and (min-width: 1600px) {
+      @content;
+    }
+  }
+  
+ 
+html{
+  scroll-behavior: smooth;
+}
+
+header {
+  background: $landingImage no-repeat bottom center/cover;
+  background-attachment: fixed;
+  height: 800px;
+  display: flex;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  #headerContent{
+    color:white;
+    h1{
+      font-size: 4rem;
+    }
+    p{
+      font-size: 2rem;
+    }
+    #btnContainer{
+      display: flex;
+      margin-top: 40px;
+      flex-direction: row;
+      justify-content: space-evenly;
+      .btn{
+        color:white;
+        &:hover {
+          background: rgba(244, 244, 244, 0.3);
+        }
+        font-size: 2rem;
+        border: 3px solid white;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+      } 
+    }
+  }
+}
+.menu-btn {
+   
+    
+    position: absolute;
+    z-index: 1;
+    right: 1rem;
+    top: 1rem;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+    @include transition-ease;
+  
+    &__burger {
+      position: absolute;
+      right: 0;
+      top: 0.5rem;
+      width: 28px;
+      height: 3px;
+      background: black;
+      @include transition-ease;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        width: 28px;
+        height: 3px;
+        background: white;
+        @include transition-ease;
+      }
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        width: 20px;
+        height: 3px;
+        background: black;
+        @include transition-ease;
+      }
+  
+      &.open {
+        transform: rotate(720deg);
+        background: transparent;
+  
+        &::before {
+          transform: rotate(45deg) translate(5px, 8px);
+        }
+  
+        &::after {
+          width: 28px;
+          transform: rotate(-45deg) translate(3px, -7px);
+        }
+      }
+    }
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .nav-links{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid red;
+    height: 100vh;
+    width: 100vw;
+    background: grey;
+    list-style-type:none;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: 
+     opacity .8s .5s,
+     clip-path 1s .5s;
+    clip-path: circle(200px at top right);
+    &.open{
+      position: fixed;
+      opacity: 1;
+      clip-path: circle(100% at center);
+    }
+    .nav-link{
+      a{
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+      }
+      &:hover{
+        border-bottom: 1px solid red;
+        border-top: 1px solid red;
+      }
+    }
+  }
+
+nav {
+  z-index: 0;
+  background: rgba(51, 51, 51, 0.9);
+  color: $whiteColor;
+  border-bottom: 5px solid #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 7%;
+  position: fixed;
+  open{
+    background-color: $primary-color;
+  }
+  
+
+  a#brand {
+    color: $whiteColor;
+    font-size: 2rem;
+    text-decoration: none;
+    
+    &:hover {
+      color: $mainRed;
+      transition: all 0.4s ease;
+    }
+  }
+  
+  
+  
+}
+
+
+.hero {
+ 
+
+  
+    &__container{
+      height: 1200px;
+      display: flex;
+      flex-direction: column;
+      background: $tourHomeImage no-repeat center center/cover;
+      align-items: center;
+      background-color: black;
+      justify-content: center;
+      &--btns{
+        padding-top: 10px;
+        &--btn{
+          background-color: transparent;
+          padding: 14px 18px;
+          border-radius: 6px;
+         
+        }
+        &--btn a{
+          text-decoration: none;
+          font-size: 1rem;
+          
+          
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         
+          
+        }
+
+        
+      }
+      
+        
+    }
+   
+
+    &__item{
+      font-size: 2rem;
+
+
+
+    }
+   
+  
+}
+
+
+#Programs{
+     
+    height: 300px;
+    display: flex;
+    background-color: grey;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .hero__item{
+      .hero__container--btns{
+        margin-top: 30px;
+        a{
+          color: white;
+          border: 2px solid white;
+          padding: 10px;
+          border-radius: 1rem;
+          text-decoration: none;
+          &:hover {
+            background: rgba(244, 244, 244, 0.3);
+          }
+        }
+       
+
+      }
+      
+      
+    }
+    
+      
+  
+}
+
+#WhySU{
+  
+    height: 600px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .hero__items{
+      color: black;
+      padding-left: 50px;
+      margin-top: 50px;
+      width: 850px;
+      display: flex;
+      flex-direction: row;
+    }
+}
+
+#FinancialAid{
+   
+  height: 600px;
+  display: flex;
+  background-color: grey;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 0px;
+  justify-content: center;
+  .hero__container--btns{
+    margin-top: 40px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 1rem;
+    &:hover {
+      background: rgba(244, 244, 244, 0.3);
+    }
+    a{
+      
+      color: white;
+      text-decoration: none;
+    }
+   
+    
+  }
+}
+
+#Tour{
+  background: $tourHomeImage no-repeat center center/cover;
+  background-attachment: fixed;
+   
+  height: 600px;
+  display: flex;
+  background-color: darkblue;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+  justify-content: center;
+  .hero__item{
+    color:white;
+  }
+  .hero__container--btns{
+    &:hover{
+      background: white;
+    }
+    border: 1px solid white;
+    border-radius: 1rem;
+    padding: 1rem;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+
+#testimonials {
+  background: $testimonialHome no-repeat center center/cover;
+  background-attachment: fixed;
+  #testimonialOverlay{
+    .sectionTitle{
+      display:flex;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 2rem;
+      color: white;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .testimonials {
+  
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .testimonial {
+    
+    color: $whiteColor;
+
+    &:nth-child(even) {
+      background: rgba(102, 0, 0, 0.8);
+    }
+
+    &:nth-child(odd) {
+      background: rgba(51, 51, 51, 0.8);
+    }
+  }
+
+  .testimonialInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+    
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 100;
+      margin-top: .7rem;
+    }
+  }
+
+  .imageContainer {
+    display: flex;
+    justify-content:center;
+   
+    align-items: center;
+  }
+
+  .testimonialImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    
+  }
+
+  blockquote {
+    font-size: 1.3rem;
+    padding: 0 1.5rem;
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+}
+ 
+

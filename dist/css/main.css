@@ -1,0 +1,509 @@
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background: url("../img/landing.jpg") no-repeat bottom center/cover;
+  background-attachment: fixed;
+  height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+header #headerContent {
+  color: white;
+}
+
+header #headerContent h1 {
+  font-size: 4rem;
+}
+
+header #headerContent p {
+  font-size: 2rem;
+}
+
+header #headerContent #btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+header #headerContent #btnContainer .btn {
+  color: white;
+  font-size: 2rem;
+  border: 3px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+header #headerContent #btnContainer .btn:hover {
+  background: rgba(244, 244, 244, 0.3);
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 1rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 28px;
+  height: 3px;
+  background: black;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  width: 28px;
+  height: 3px;
+  background: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 3px;
+  background: black;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger.open {
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
+  background: transparent;
+}
+
+.menu-btn__burger.open::before {
+  -webkit-transform: rotate(45deg) translate(5px, 8px);
+          transform: rotate(45deg) translate(5px, 8px);
+}
+
+.menu-btn__burger.open::after {
+  width: 28px;
+  -webkit-transform: rotate(-45deg) translate(3px, -7px);
+          transform: rotate(-45deg) translate(3px, -7px);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border: 1px solid red;
+  height: 100vh;
+  width: 100vw;
+  background: grey;
+  list-style-type: none;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity .8s .5s, -webkit-clip-path 1s .5s;
+  transition: opacity .8s .5s, -webkit-clip-path 1s .5s;
+  transition: opacity .8s .5s, clip-path 1s .5s;
+  transition: opacity .8s .5s, clip-path 1s .5s, -webkit-clip-path 1s .5s;
+  -webkit-clip-path: circle(200px at top right);
+          clip-path: circle(200px at top right);
+}
+
+.nav-links.open {
+  position: fixed;
+  opacity: 1;
+  -webkit-clip-path: circle(100% at center);
+          clip-path: circle(100% at center);
+}
+
+.nav-links .nav-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.nav-links .nav-link:hover {
+  border-bottom: 1px solid red;
+  border-top: 1px solid red;
+}
+
+nav {
+  z-index: 0;
+  background: rgba(51, 51, 51, 0.9);
+  color: #f4f4f4;
+  border-bottom: 5px solid #f4f4f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 10px 7%;
+  position: fixed;
+}
+
+nav open {
+  background-color: #2541b2;
+}
+
+nav a#brand {
+  color: #f4f4f4;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+nav a#brand:hover {
+  color: #660000;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.hero__container {
+  height: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: url("../img/tourHome.jpg") no-repeat center center/cover;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__container--btns {
+  padding-top: 10px;
+}
+
+.hero__container--btns--btn {
+  background-color: transparent;
+  padding: 14px 18px;
+  border-radius: 6px;
+}
+
+.hero__container--btns--btn a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero__item {
+  font-size: 2rem;
+}
+
+#Programs {
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: grey;
+  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Programs .hero__item .hero__container--btns {
+  margin-top: 30px;
+}
+
+#Programs .hero__item .hero__container--btns a {
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+
+#Programs .hero__item .hero__container--btns a:hover {
+  background: rgba(244, 244, 244, 0.3);
+}
+
+#WhySU {
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#WhySU .hero__items {
+  color: black;
+  padding-left: 50px;
+  margin-top: 50px;
+  width: 850px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#FinancialAid {
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: grey;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  margin-top: 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#FinancialAid .hero__container--btns {
+  margin-top: 40px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 1rem;
+}
+
+#FinancialAid .hero__container--btns:hover {
+  background: rgba(244, 244, 244, 0.3);
+}
+
+#FinancialAid .hero__container--btns a {
+  color: white;
+  text-decoration: none;
+}
+
+#Tour {
+  background: url("../img/tourHome.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: darkblue;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Tour .hero__item {
+  color: white;
+}
+
+#Tour .hero__container--btns {
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+#Tour .hero__container--btns:hover {
+  background: white;
+}
+
+#Tour .hero__container--btns a {
+  text-decoration: none;
+  color: white;
+}
+
+#testimonials {
+  background: url("../img/testimonialHome.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+#testimonials #testimonialOverlay .sectionTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 2rem;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#testimonials .testimonials {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+#testimonials .testimonial {
+  color: #f4f4f4;
+}
+
+#testimonials .testimonial:nth-child(even) {
+  background: rgba(102, 0, 0, 0.8);
+}
+
+#testimonials .testimonial:nth-child(odd) {
+  background: rgba(51, 51, 51, 0.8);
+}
+
+#testimonials .testimonialInfo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 2rem;
+}
+
+#testimonials .testimonialInfo h2 {
+  font-size: 2.5rem;
+}
+
+#testimonials .testimonialInfo h4 {
+  font-size: 1.3rem;
+  font-weight: 100;
+  margin-top: .7rem;
+}
+
+#testimonials .imageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#testimonials .testimonialImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+#testimonials blockquote {
+  font-size: 1.3rem;
+  padding: 0 1.5rem;
+}
+
+@-webkit-keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+/*# sourceMappingURL=main.css.map */

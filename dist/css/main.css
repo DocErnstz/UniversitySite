@@ -63,28 +63,6 @@ header #headerContent #btnContainer .btn:hover {
   background: rgba(244, 244, 244, 0.3);
 }
 
-@media (max-width: 500px) {
-  header {
-    background-attachment: initial;
-  }
-  header #headerContent #btnContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header #headerContent #btnContainer a {
-    font-size: 1rem;
-    width: 50%;
-  }
-  header #headerContent #btnContainer .btn {
-    margin-top: 10px;
-  }
-}
-
 .menu-btn {
   position: absolute;
   z-index: 1;
@@ -173,9 +151,9 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  border: 1px solid red;
   height: 100vh;
   width: 100vw;
+  margin-top: 60px;
   background: grey;
   list-style-type: none;
   top: 0;
@@ -199,7 +177,7 @@ body {
 .nav-links .nav-link a {
   color: white;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .nav-links .nav-link:hover {
@@ -526,6 +504,133 @@ nav a#brand:hover {
     opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    background-attachment: initial;
+  }
+  header #headerContent #btnContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header #headerContent #btnContainer a {
+    font-size: 1rem;
+    width: 50%;
+  }
+  header #headerContent #btnContainer .btn {
+    margin-top: 10px;
+  }
+  .hero #Programs {
+    height: 70vh;
+    background-attachment: initial;
+    text-align: center;
+  }
+  .hero #Programs h1 {
+    margin-top: 2rem;
+  }
+  .hero #Programs .hero__container--btns {
+    margin-bottom: 4rem;
+  }
+  #FinancialAid {
+    height: 70vh;
+    background-attachment: initial;
+    text-align: center;
+  }
+  #Tour {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+  #WhySU .hero__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    text-align: center;
+    width: 90%;
+    margin-right: 50px;
+  }
+  #testimonials {
+    background-attachment: initial;
+  }
+  #testimonials .testimonials {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #testimonials .testimonials .testimonial blockquote {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #testimonials .testimonials .testimonial .testimonialInfo {
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  #testimonials {
+    background-attachment: initial;
+  }
+  #testimonials .testimonials {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #testimonials .testimonial {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+  #testimonials .testimonial .testimonialInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #testimonials .testimonial .testimonialInfo .imageContainer {
+    margin-bottom: 1.5rem;
+  }
+  #Programs {
+    text-align: center;
+  }
+  #WhySU .hero__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    text-align: center;
+    width: 90%;
+    margin-right: 50px;
   }
 }
 /*# sourceMappingURL=main.css.map */
